@@ -9,6 +9,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
  *
  * @author laufer
  */
+// SJ Need to converge start/stop and reset button per functional requirements
 public class DefaultStopwatchStateMachine implements StopwatchStateMachine {
 
     public DefaultStopwatchStateMachine(final TimeModel timeModel, final ClockModel clockModel) {

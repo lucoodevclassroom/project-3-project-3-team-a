@@ -83,7 +83,7 @@ public class StopwatchAdapter extends Activity implements StopwatchModelListener
             stateName.setText(getString(stateId));
         });
     }
-
+    // Looks like these interact with the startstop and reset buttons
     // forward event listener methods to the model
     public void onStartStop(final View view) {
         model.onStartStop();

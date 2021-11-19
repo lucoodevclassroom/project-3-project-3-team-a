@@ -5,6 +5,7 @@ import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.*;
 /**
  * An implementation of the stopwatch data model.
  */
+// SJ actual changing of time values are manipulated here on start/stop and lap/reset press.
 public class DefaultTimeModel implements TimeModel {
 
     private int runningTime = 0;
