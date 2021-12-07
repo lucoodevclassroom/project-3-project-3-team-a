@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
+import android.net.Uri;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +24,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
  * object for all dependencies of the state machine model.
  *
  * @author laufer
- * @see http://xunitpatterns.com/Testcase%20Superclass.html
+ * @see ://xunitpatterns.com/Testcase%20Superclass.html
  */
 public abstract class AbstractStopwatchStateMachineTest {
 
@@ -99,7 +101,6 @@ public abstract class AbstractStopwatchStateMachineTest {
         assertTrue(dependency.isStarted());
         onTickRepeat(5);
         assertTimeEquals(5);
-        model.onLapReset();
         assertEquals(R.string.LAP_RUNNING, dependency.getState());
         assertTrue(dependency.isStarted());
         onTickRepeat(4);
@@ -108,11 +109,9 @@ public abstract class AbstractStopwatchStateMachineTest {
         assertEquals(R.string.LAP_STOPPED, dependency.getState());
         assertFalse(dependency.isStarted());
         assertTimeEquals(5);
-        model.onLapReset();
         assertEquals(R.string.STOPPED, dependency.getState());
         assertFalse(dependency.isStarted());
         assertTimeEquals(9);
-        model.onLapReset();
         assertEquals(R.string.STOPPED, dependency.getState());
         assertFalse(dependency.isStarted());
         assertTimeEquals(0);
@@ -175,6 +174,11 @@ class UnifiedMockDependency implements TimeModel, ClockModel, StopwatchModelList
     }
 
     @Override
+    public Uri playNotification() {
+        return playNotification1();
+    }
+
+    @Override
     public void setTickListener(TickListener listener) {
         throw new UnsupportedOperationException();
     }
@@ -205,12 +209,18 @@ class UnifiedMockDependency implements TimeModel, ClockModel, StopwatchModelList
     }
 
     @Override
-    public void setLaptime() {
-        lapTime = runningTime;
+    public void decRuntime() {
+
     }
 
     @Override
-    public int getLaptime() {
-        return lapTime;
+    public boolean isEmpty() {
+        return false;
     }
+
+    @Override
+    public boolean isFull() {
+        return false;
+    }
+
 }

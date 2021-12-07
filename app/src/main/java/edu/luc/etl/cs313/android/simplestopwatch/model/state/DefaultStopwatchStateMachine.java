@@ -72,7 +72,7 @@ public class DefaultStopwatchStateMachine implements StopwatchStateMachine {
     @Override public void actionDec()        { timeModel.decRuntime(); actionUpdateView(); }
     @Override public void actionInc()        { timeModel.incRuntime(); delay = 0; actionUpdateView();}
     @Override public void actionUpdateView() { state.updateView(); }
-    @Override public void actionAlarm() { TickListener.playNotification();}
+    @Override public void actionAlarm()      { StopwatchModelListener.playNotification1();} // SJ Can't get around static reference error for alarm sound
 
 
 

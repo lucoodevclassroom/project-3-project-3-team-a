@@ -1,5 +1,7 @@
 package edu.luc.etl.cs313.android.simplestopwatch.common;
 
+import android.net.Uri;
+
 /**
  * A listener for UI update events.
  * This interface is typically implemented by the adapter, with the
@@ -10,5 +12,5 @@ package edu.luc.etl.cs313.android.simplestopwatch.common;
 public interface StopwatchModelListener {
     void onTimeUpdate(int timeValue);
     void onStateUpdate(int stateId);
-    void playNotification();
+    Uri playNotification1();
 }

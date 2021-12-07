@@ -1,10 +1,13 @@
 package edu.luc.etl.cs313.android.simplestopwatch.android;
 
 import android.app.Activity;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.net.Uri;
 
 import java.util.Locale;
 
@@ -83,13 +86,21 @@ public class StopwatchAdapter extends Activity implements StopwatchModelListener
             stateName.setText(getString(stateId));
         });
     }
+
+    @Override
+    public void playNotification() {
+        try{
+            Uri defaultRingtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), playNotification1());
+            r.play();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     // Looks like these interact with the startstop and reset buttons
     // forward event listener methods to the model
     public void onStartStop(final View view) {
         model.onStartStop();
-    }
-
-    public void onLapReset(final View view)  {
-        model.onLapReset();
     }
 }

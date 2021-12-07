@@ -18,8 +18,12 @@ class RunningState implements StopwatchState {
 
     @Override
     public void onTick() {
-        sm.actionInc();
-        sm.toRunningState();
+        if (sm.countedDown()){
+            sm.toStoppedState();
+        } else {
+            sm.actionDec();
+            sm.toRunningState();
+        }
     }
 
     @Override

@@ -13,11 +13,12 @@ class StoppedState implements StopwatchState {
     @Override
     public void onStartStop() {
         sm.actionStart();
-        sm.toRunningState();
+        sm.toStoppedResetState();
     }
 
     @Override
     public void onTick() {
+        sm.actionAlarm();
         throw new UnsupportedOperationException("onTick");
     }
 
