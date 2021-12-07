@@ -8,7 +8,7 @@ public enum Constants {
     ;
 
     public static final int SEC_PER_TICK = 1; // SJ Maybe change 1 to -1 so that it will countdown instead of up.
-    public static final int SEC_PER_MIN = 60;
-    public static final int SEC_PER_HOUR = 3600;
+    //public static final int SEC_PER_MIN = 60;
+    //public static final int SEC_PER_HOUR = 3600;
 
 }

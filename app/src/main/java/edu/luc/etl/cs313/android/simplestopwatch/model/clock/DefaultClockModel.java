@@ -28,8 +28,8 @@ public class DefaultClockModel implements ClockModel {
         // The clock model runs onTick every 1000 milliseconds
         timer.schedule(new TimerTask() {
             @Override public void run() {
-                // fire event
                 listener.onTick();
+                // fire event
             }
         }, /*initial delay*/ 1000, /*periodic delay*/ 1000);
     }

@@ -20,5 +20,7 @@
 
     <!-- KL test string creations - remove before final submission -->
     <string name="KLHW">HelloWorld</string>
+    <string name="INCREMENT" />
+    <string name="STOPPED_RESET" />
 
 </resources>

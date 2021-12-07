@@ -1,13 +1,12 @@
 package edu.luc.etl.cs313.android.simplestopwatch.test.android;
 
-import edu.luc.etl.cs313.android.simplestopwatch.BuildConfig;
-import edu.luc.etl.cs313.android.simplestopwatch.android.StopwatchAdapter;
-
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+
+import edu.luc.etl.cs313.android.simplestopwatch.android.StopwatchAdapter;
 
 /**
  * Concrete Robolectric test subclass. For the Gradle unitTest task to work,
