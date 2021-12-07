@@ -82,7 +82,7 @@ public class DefaultStopwatchStateMachine implements StopwatchStateMachine {
 
     @Override public void setDelay(int t) {delay = t;}
 
-    @Override public boolean reachMax(){
+    @Override public boolean atMax(){
         return timeModel.isFull();
     }
 

@@ -20,7 +20,7 @@ class IncrementState implements StopwatchState {
     public void onTick() {
         int d = sm.getDelay();
         sm.setDelay(++d);
-        if (d == 3 || sm.reachMax()) {
+        if (d == 3 || sm.atMax()) {
             sm.actionAlarm();
             sm.toRunningState();
         }
